@@ -1,18 +1,144 @@
-body {
-    font-family: Arial, sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-#suggestions {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+input,
+textarea,
+select,
+button {
+  -webkit-user-select: auto;
+  user-select: auto;
+  cursor: text;
 }
 
-#suggestions li {
-    padding: 5px;
-    cursor: pointer;
+input,
+textarea {
+  position: relative;
+  z-index: 1000;
 }
 
-#suggestions li:hover {
-    background-color: #f0f0f0;
+.form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.form-group label {
+  width: 60px;
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+.checkbox-container label {
+  white-space: nowrap;
+}
+.input-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input[type='date'],
+.form-group input[type='text'],
+.form-group input[type='number'],
+.form-group select {
+  flex: 1;
+  padding: 8px;
+  font-size: 20px;
+}
+
+.radio-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.radio-label {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.radio-label input[type='radio'] {
+  margin-right: 8px;
+}
+
+.radio-label input[type='radio'] {
+  accent-color: #272ac0;
+}
+
+.checkbox-container label {
+  width: 120px;
+  font-size: 20px;
+}
+
+.checkbox-container input[type='checkbox'] {
+  margin-right: 8px;
+}
+
+#sendButton {
+  font-size: 24px;
+  padding: 12px 24px;
+  width: 100%;
+  max-width: 300px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.send-button-group {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .send-button-group {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    z-index: 10;
+  }
+}
+
+.dropdown-container {
+  flex: 1;
+  display: flex;
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 20;
+}
+
+.dropdown-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
 }

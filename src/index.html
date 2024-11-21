@@ -3,24 +3,108 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BeanSnap</title>
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Bean PWA</title>
 </head>
 <link rel="manifest" href="manifest.json">
 
 <body>
-  <h1>記帳</h1>
-  <select id="dropdown">
-    <option value="">選擇帳號</option>
-  </select>
+  <h1>新增消費</h1>
 
-  <!-- 模糊搜索输入框 -->
-  <input type="text" id="search" placeholder="請輸入搜尋關鍵字">
+  <div class="form-group">
+    <label for="dateInput">日期：</label>
+    <input type="date" id="dateInput">
+  </div>
 
-  <ul id="suggestions"></ul>
+  <div class="form-group">
+    <label for="payeeInput">商家：</label>
+    <div class="input-container">
+      <div class="dropdown-container">
+        <input type="text" id="payeeInput" placeholder="(不常用的話填到備注)">
+        <div id="payeeDropdown" class="dropdown-menu" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
 
-  <button id="send">記錄</button>
+  <div class="form-group">
+    <label for="walletSelect">錢包：</label>
+    <div class="input-container">
+      <select id="walletSelect"></select>
+      <div class="dropdown-container">
+        <input type="text" id="searchInput" placeholder="輸入/搜尋錢包" style="display: none;">
+        <div id="searchDropdown" class="dropdown-menu" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="expCatSelect">分類：</label>
+    <div class="input-container">
+      <select id="expCatSelect"></select>
+      <div class="dropdown-container">
+        <input type="text" id="searchInput2" placeholder="輸入/搜尋帳戶" style="display: none;">
+        <div id="searchDropdown2" class="dropdown-menu" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="numberInput">金額：</label>
+    <input type="number" id="numberInput" placeholder="" inputmode="decimal" pattern="[0-9]*">
+  </div>
+
+  <div class="form-group">
+    <label>幣別：</label>
+    <div class="radio-container">
+      <div class="radio-label">
+        <input type="radio" name="currency" value="USD" id="currencyUSD" checked>
+        USD
+      </div>
+      <div class="radio-label">
+        <input type="radio" name="currency" value="TWD" id="currencyTWD">
+        TWD
+      </div>
+      <div class="radio-label">
+        <input type="radio" name="currency" value="JPY" id="currencyOther">
+        JPY
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="noteInput">備注：</label>
+    <input type="text" id="noteInput" placeholder="">
+  </div>
+
+  <div class="form-group">
+    <label>標注：</label>
+    <div class="radio-container">
+      <div class="radio-label">
+        <input type="radio" name="annotation" value="*" id="annotationStar">
+        *
+      </div>
+      <div class="radio-label">
+        <input type="radio" name="annotation" value="!" id="annotationExclamation" checked>
+        !
+      </div>
+      <div class="radio-label">
+        <input type="radio" name="annotation" value="?" id="annotationQuestion">
+        ?
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>其他：</label>
+    <div class="checkbox-container">
+      <label><input type="checkbox" id="timeCheckbox" value="time">加入現在時間</label>
+    </div>
+  </div>
+
+  <div class="form-group send-button-group">
+    <button id="sendButton">記錄</button>
+  </div>
+
 </body>
 
 </html>

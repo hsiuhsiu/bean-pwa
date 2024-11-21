@@ -15,7 +15,9 @@ module.exports = {
       directory: path.join(__dirname, 'dist')
     },
     compress: true,
-    port: 9000
+    // host: '0.0.0.0',
+    port: 9009,
+    allowedHosts: 'all',
   },
   module: {
     rules: [
@@ -34,7 +36,7 @@ module.exports = {
         { from: 'src/style.css', to: 'style.css' },
         { from: 'src/sw.js', to: 'sw.js' },
         { from: 'src/manifest.json', to: 'manifest.json' },
-        { from: 'src/icon.png', to: 'icon.png' }
+        { from: 'src/favicon.ico', to: 'favicon.ico' }
       ]
     })
   ]

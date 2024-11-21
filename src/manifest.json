@@ -1,13 +1,13 @@
 {
-    "name": "我的 PWA 应用",
-    "short_name": "PWA 应用",
+    "name": "我的行動記帳",
+    "short_name": "記帳",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#ffffff",
-    "description": "一个示例 PWA 应用",
+    "description": "這是我的私人行動記帳網站。",
     "icons": [
         {
-            "src": "icon.png",
+            "src": "favicon.ico",
             "sizes": "192x192",
             "type": "image/png"
         }
